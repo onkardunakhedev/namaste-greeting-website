@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Namaste — The Divine Greeting of Peace & Union</title>
+    <meta name="description" content="Explore the profound meaning, philosophy, audio atmosphere, and practice of Namaste — I bow to the divine within you.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Serif+Devanagari:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Canvas for Glowing Particles -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo-area">
+                <span class="symbol-icon">ॐ</span>
+                <span class="logo-text">Namaste</span>
+            </a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#hero">Home</a>
+                <a href="#meaning">Meaning & Philosophy</a>
+                <a href="#anjali-mudra">Anjali Mudra</a>
+                <a href="#wisdom">Wisdom & Mantras</a>
+                <a href="#breathing">Mindful Breath</a>
+                <a href="#ecard">Send Namaste</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="soundToggleBtn" class="btn-sound" title="Toggle Sound Tone">
+                    <i class="fa-solid fa-volume-xmark" id="soundIcon"></i>
+                    <span id="soundText">Ambient Sound</span>
+                </button>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="sanskrit-badge">
+                    <span class="sanskrit-text">नमस्ते</span>
+                    <span class="phonetic">/nʌmʌsˈteɪ/</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="gold-gradient">Namaste</span>
+                </h1>
+                <p class="hero-subtitle">
+                    "I bow to the divine light within you, which is also within me."
+                </p>
+                <p class="hero-description">
+                    A timeless Sanskrit greeting of reverence, humility, and universal oneness. Experience the soul of India’s gift of peace to the world.
+                </p>
+                
+                <div class="hero-cta-group">
+                    <a href="#meaning" class="btn btn-primary">
+                        <i class="fa-solid fa-compass"></i> Explore Meaning
+                    </a>
+                    <a href="#breathing" class="btn btn-secondary">
+                        <i class="fa-solid fa-spa"></i> Peace Breathing
+                    </a>
+                    <a href="#ecard" class="btn btn-gold">
+                        <i class="fa-solid fa-paper-plane"></i> Share Greeting
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">5,000+</span>
+                        <span class="stat-label">Years of Tradition</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">1</span>
+                        <span class="stat-label">Universal Spirit</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-num">∞</span>
+                        <span class="stat-label">Boundless Respect</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="mandala-container">
+                    <div class="mandala-ring ring-1"></div>
+                    <div class="mandala-ring ring-2"></div>
+                    <div class="mandala-ring ring-3"></div>
+                    <div class="lotus-center">
+                        <svg class="namaste-hands-svg" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Lotus petals glow -->
+                            <path d="M100 20 C110 50, 150 60, 160 100 C150 140, 110 150, 100 180 C90 150, 50 140, 40 100 C50 60, 90 50, 100 20 Z" fill="url(#lotusGlow)" opacity="0.3"/>
+                            <!-- Anjali Mudra Folded Hands Graphic -->
+                            <g transform="translate(45, 30)">
+                                <!-- Left hand -->
+                                <path d="M55,130 C45,110 35,90 35,70 C35,45 48,30 54,20 C55,18 57,18 58,20 C60,25 65,40 65,60 C65,75 60,110 55,130 Z" fill="url(#goldGrad)" />
+                                <!-- Right hand -->
+                                <path d="M55,130 C65,110 75,90 75,70 C75,45 62,30 56,20 C55,18 53,18 52,20 C50,25 45,40 45,60 C45,75 50,110 55,130 Z" fill="url(#goldGrad2)" />
+                                <!-- Thumb details -->
+                                <path d="M48,80 C40,85 36,95 40,105 C44,115 52,118 55,120" stroke="#FFD700" stroke-width="2.5" stroke-linecap="round"/>
+                                <path d="M62,80 C70,85 74,95 70,105 C66,115 58,118 55,120" stroke="#FFC107" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
+                            <defs>
+                                <radialGradient id="lotusGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#FF9933" stop-opacity="0.8"/>
+                                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                                </radialGradient>
+                                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFE082"/>
+                                    <stop offset="50%" stop-color="#FFB300"/>
+                                    <stop offset="100%" stop-color="#FF8F00"/>
+                                </linearGradient>
+                                <linearGradient id="goldGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFF59D"/>
+                                    <stop offset="50%" stop-color="#FFCA28"/>
+                                    <stop offset="100%" stop-color="#FF6F00"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Etymology & Meaning Breakdown -->
+        <section id="meaning" class="section-padding meaning-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Etymology & Wisdom</span>
+                    <h2>Deconstructing <span class="gold-text">Namaste</span></h2>
+                    <p class="section-lead">The ancient Sanskrit word is composed of three root elements, carrying layers of spiritual resonance.</p>
+                </div>
+
+                <div class="etymology-grid">
+                    <div class="etym-card">
+                        <div class="etym-sanskrit">नमः</div>
+                        <div class="etym-root">Namas</div>
+                        <div class="etym-meaning">"Bowing" or "Adoration"</div>
+                        <p class="etym-desc">Derived from 'nam', meaning to bend, bow, or yield. Represents the surrender of ego in front of higher wisdom and sacred spirit.</p>
+                    </div>
+
+                    <div class="etym-plus">+</div>
+
+                    <div class="etym-card">
+                        <div class="etym-sanskrit">अस्</div>
+                        <div class="etym-root">As</div>
+                        <div class="etym-meaning">"I" / "Ego surrender"</div>
+                        <p class="etym-desc">Implies "not mine" (Na-Mama). A reminder that individual identity merges into global consciousness.</p>
+                    </div>
+
+                    <div class="etym-plus">+</div>
+
+                    <div class="etym-card">
+                        <div class="etym-sanskrit">ते</div>
+                        <div class="etym-root">Te</div>
+                        <div class="etym-meaning">"To You"</div>
+                        <p class="etym-desc">Addresses the inner divinity residing inside the recipient, honoring their divine spark with sincerity.</p>
+                    </div>
+                </div>
+
+                <!-- Spiritual Philosophy Callout -->
+                <div class="philosophy-box">
+                    <div class="quote-mark"><i class="fa-solid fa-quote-left"></i></div>
+                    <p class="philosophy-text">
+                        "When I greet you with Namaste, I acknowledge that behind your physical form, your age, title, or status, lies the exact same cosmic energy that flows through me. We are one."
+                    </p>
+                    <div class="philosophy-author">— Vedic Philosophy</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Anjali Mudra Section -->
+        <section id="anjali-mudra" class="section-padding mudra-section">
+            <div class="container">
+                <div class="grid-2col">
+                    <div class="mudra-info">
+                        <span class="sub-title">Sacred Gesture</span>
+                        <h2>The Science of <span class="gold-text">Anjali Mudra</span></h2>
+                        <p>The gesture accompanying Namaste is known as <strong>Anjali Mudra</strong> (or Pranamasana). Bringing the palms together at the heart center creates a subtle circuit of energy.</p>
+
+                        <div class="mudra-benefits">
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-brain"></i></div>
+                                <div>
+                                    <h4>Balances Brain Hemispheres</h4>
+                                    <p>Joining fingertips links the right (creative/intuitive) and left (logical/active) hemispheres of the brain.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                                <div>
+                                    <h4>Activates Heart Chakra (Anahata)</h4>
+                                    <p>Holding hands close to the sternum cultivates empathy, gratitude, and emotional equilibrium.</p>
+                                </div>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                                <div>
+                                    <h4>Hygiene & Mindful Space</h4>
+                                    <p>A non-touch greeting that honors personal boundaries while bestowing deep warmth and protection.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Mudra Simulator -->
+                    <div class="mudra-card-wrapper">
+                        <div class="mudra-interactive-card">
+                            <h3>Interactive Energy Visualizer</h3>
+                            <p>Click the button below to feel the virtual harmonizing wave of Anjali Mudra.</p>
+
+                            <div class="mudra-pulse-area" id="mudraPulseArea">
+                                <div class="hands-center-icon" id="handsIcon">
+                                    <i class="fa-solid fa-hands-praying"></i>
+                                </div>
+                                <div class="energy-ring ring-a"></div>
+                                <div class="energy-ring ring-b"></div>
+                                <div class="energy-ring ring-c"></div>
+                            </div>
+
+                            <div class="mudra-controls">
+                                <button class="btn btn-gold w-100" id="triggerPulseBtn">
+                                    <i class="fa-solid fa-bolt"></i> Send Peace Pulse
+                                </button>
+                                <div id="pulseStatus" class="pulse-status">Click to align energy balance</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quotes & Wisdom Generator Section -->
+        <section id="wisdom" class="section-padding wisdom-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Daily Inspiration</span>
+                    <h2>Sacred Wisdom & <span class="gold-text">Namaste Quotes</span></h2>
+                    <p class="section-lead">Discover uplifting thoughts on harmony, connection, and spiritual oneness.</p>
+                </div>
+
+                <div class="wisdom-card-container">
+                    <div class="wisdom-card" id="wisdomCard">
+                        <div class="wisdom-sanskrit" id="wisdomSanskrit">ॐ शान्तिः शान्तिः शान्तिः</div>
+                        <blockquote class="wisdom-quote" id="quoteText">
+                            "My soul honors your soul. I honor the place in you where the entire universe resides. I honor the light, love, truth, beauty & peace within you, because it is also within me."
+                        </blockquote>
+                        <div class="wisdom-author" id="quoteAuthor">— Ancient Blessing</div>
+                        
+                        <div class="wisdom-actions">
+                            <button class="btn btn-secondary btn-sm" id="prevQuoteBtn"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+                            <button class="btn btn-gold btn-sm" id="nextQuoteBtn">Next Wisdom <i class="fa-solid fa-chevron-right"></i></button>
+                            <button class="btn btn-outline btn-sm" id="copyQuoteBtn"><i class="fa-solid fa-copy"></i> Copy Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Variations of Greetings in India -->
+                <div class="variations-grid">
+                    <div class="var-card">
+                        <h3>Namaskar</h3>
+                        <span class="var-tag">Formal & Respectful</span>
+                        <p>Widely used across Northern, Central, and Eastern India to address elders, teachers, and esteemed guests.</p>
+                    </div>
+                    <div class="var-card">
+                        <h3>Pranam</h3>
+                        <span class="var-tag">Reverent Touch</span>
+                        <p>Accompanied by touching the feet of elders to seek blessings, signifying profound gratitude and humbleness.</p>
+                    </div>
+                    <div class="var-card">
+                        <h3>Vanakkam / Namaskaram</h3>
+                        <span class="var-tag">Southern Traditions</span>
+                        <p>Tamil and Malayalam variants celebrating classical roots of welcoming guests as manifestation of God.</p>
+                    </div>
+                    <div class="var-card">
+                        <h3>Sat Sri Akal</h3>
+                        <span class="var-tag">Sikh Greeting</span>
+                        <p>"God is the Timeless Truth" — honoring the divine presence in every soul with courage and peace.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Breathing Companion -->
+        <section id="breathing" class="section-padding breathing-section">
+            <div class="container text-center">
+                <span class="sub-title">Mindful Pause</span>
+                <h2>Namaste <span class="gold-text">Breathing Companion</span></h2>
+                <p class="section-lead">Center your heart. Inhale reverence, exhale stress.</p>
+
+                <div class="breathing-widget">
+                    <div class="breath-circle-wrap">
+                        <div class="breath-circle" id="breathCircle">
+                            <span class="breath-instruction" id="breathText">Press Start</span>
+                            <span class="breath-timer" id="breathTimer">04</span>
+                        </div>
+                    </div>
+
+                    <div class="breathing-controls">
+                        <button class="btn btn-primary" id="startBreathBtn">
+                            <i class="fa-solid fa-play"></i> Start 1-Min Relaxation
+                        </button>
+                        <button class="btn btn-outline" id="stopBreathBtn" disabled>
+                            <i class="fa-solid fa-pause"></i> Pause
+                        </button>
+                    </div>
+
+                    <div class="breath-counter">
+                        Completed Cycles: <span id="completedCycles">0</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive E-Card Creator -->
+        <section id="ecard" class="section-padding ecard-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Personalized Greeting</span>
+                    <h2>Create & Send a <span class="gold-text">Namaste Card</span></h2>
+                    <p class="section-lead">Customize your custom digital greeting card to share peace with family, colleagues, or loved ones.</p>
+                </div>
+
+                <div class="grid-2col ecard-workspace">
+                    <!-- Form Controls -->
+                    <div class="ecard-form">
+                        <div class="form-group">
+                            <label for="cardRecipient">Recipient's Name</label>
+                            <input type="text" id="cardRecipient" placeholder="e.g. Dearest Friend, Maya" value="Dear Friend">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardMessage">Your Namaste Blessing</label>
+                            <textarea id="cardMessage" rows="4" placeholder="Type your personal message here...">Wishing you light, inner peace, and unconditional joy today and always. Namaste!</textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardSender">Your Name</label>
+                            <input type="text" id="cardSender" placeholder="e.g. With love, Rohan" value="With warmth, Alex">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Choose Card Theme</label>
+                            <div class="theme-picker">
+                                <button class="theme-btn active" data-theme="gold" style="background: linear-gradient(135deg, #1f1a10, #3d2d14); border-color: #ffd700;"></button>
+                                <button class="theme-btn" data-theme="royal" style="background: linear-gradient(135deg, #0d1b2a, #1b263b); border-color: #00b4d8;"></button>
+                                <button class="theme-btn" data-theme="crimson" style="background: linear-gradient(135deg, #2b0b0e, #501015); border-color: #ff4d6d;"></button>
+                                <button class="theme-btn" data-theme="forest" style="background: linear-gradient(135deg, #0a210f, #143818); border-color: #52b788;"></button>
+                            </div>
+                        </div>
+
+                        <div class="ecard-actions">
+                            <button class="btn btn-gold w-100" id="copyCardTextBtn">
+                                <i class="fa-solid fa-copy"></i> Copy Card Text
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview Card -->
+                    <div class="ecard-preview-wrapper">
+                        <div class="preview-label"><i class="fa-solid fa-eye"></i> Live Preview</div>
+                        <div class="namaste-card-display theme-gold" id="namasteCardDisplay">
+                            <div class="card-border-frame"></div>
+                            <div class="card-sanskrit-top">नमस्ते</div>
+                            <div class="card-hands-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                            <div class="card-recipient" id="previewRecipient">Dear Friend</div>
+                            <p class="card-body-text" id="previewMessage">
+                                Wishing you light, inner peace, and unconditional joy today and always. Namaste!
+                            </p>
+                            <div class="card-sender" id="previewSender">With warmth, Alex</div>
+                            <div class="card-footer-quote">"The divine in me bows to the divine in you."</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section-padding faq-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="sub-title">Knowledge Base</span>
+                    <h2>Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do I pronounce Namaste correctly?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>In authentic Sanskrit/Hindi, it is pronounced <strong>"Nah-mas-teh"</strong> (with a short 'a' sound in 'Nah' and a soft 'teh' like in 'ten', rather than "Nah-mah-stay"). Both hands are placed together at the chest.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>When is Namaste used?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>It is used both when greeting someone upon arrival and when bidding farewell. It is appropriate for everyday interactions, spiritual gatherings, yoga classes, and formal ceremonies.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Is Namaste a religious or spiritual term?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>While originating from Vedic spiritual traditions, Namaste is a universal greeting of human connection and respect that transcends religious boundaries.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you need to speak when giving Anjali Mudra?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No! The gesture of bringing hands together with a slight bow carries the full meaning of Namaste on its own, even without vocalizing the word.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container text-center">
+            <div class="footer-symbol">ॐ</div>
+            <h3 class="footer-title">Namaste — The Eternal Greeting</h3>
+            <p class="footer-text">May all beings everywhere be happy and free.</p>
+            <div class="footer-socials">
+                <a href="#hero" title="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> Namaste Peace & Cultural Initiative. Crafted with reverence.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
